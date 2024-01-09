@@ -1,0 +1,27 @@
+CANVAS_WIDTH = 500
+CANVAS_HEIGHT = 500
+NUM_ROWS = 15
+NUM_COLUMNS = 15
+CIRCLE_HEIGHT = CANVAS_WIDTH/NUM_COLUMNS
+function setup() {
+  let canv = createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT);
+  background("#A18157")
+  
+  for (var x = 0; x <NUM_COLUMNS; x++){
+    for(var y = 0; y <NUM_ROWS; y++){
+      let x_pos = (x * CIRCLE_HEIGHT) + (CIRCLE_HEIGHT / 2);
+      let y_pos = (y * CIRCLE_HEIGHT) + (CIRCLE_HEIGHT / 2);
+      
+      let red_value = 255 * ((x + y)/(NUM_ROWS + NUM_COLUMNS));
+      
+      fill(red_value,80,120);
+      
+      circle(x_pos, y_pos, CIRCLE_HEIGHT);
+      print(`x: ${x_pos}, y: ${y_pos} - RED_VAL ${red_value}`)
+    }
+  }
+}
+
+
+function draw() {
+}
